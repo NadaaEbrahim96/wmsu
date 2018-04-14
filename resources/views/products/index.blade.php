@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-    name /
+    name / price / color / model / image
 @endsection

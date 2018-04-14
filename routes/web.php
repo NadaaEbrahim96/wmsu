@@ -18,4 +18,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('sections','SectionController');
-Route::resource('slots','SlotsController');
+Route::resource('slots','SlotController');
+Route::resource('products','ProductController');

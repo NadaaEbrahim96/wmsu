@@ -14,8 +14,8 @@ class SlotController extends Controller
      */
     public function index()
     {
-        $sections  = Section::all();
-        return view('section.index',compact('sections'));
+        $slots  = Slot::all();
+        return view('slots.index',compact('slots'));
     }
 
     /**
