@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Section;
 use App\Slot;
+use foo\bar;
 use Illuminate\Http\Request;
 
 class SlotController extends Controller
@@ -15,6 +17,7 @@ class SlotController extends Controller
     public function index()
     {
         $slots  = Slot::all();
+
         return view('slots.index',compact('slots'));
     }
 
@@ -25,7 +28,8 @@ class SlotController extends Controller
      */
     public function create()
     {
-        //
+        $sections = Section::all();
+        return view('slots.create',compact('sections'));
     }
 
     /**
@@ -36,7 +40,8 @@ class SlotController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Slot::create($request->all());
+        return redirect('/slots');
     }
 
     /**
@@ -58,7 +63,7 @@ class SlotController extends Controller
      */
     public function edit(Slot $slot)
     {
-        //
+        return view('slots.update');
     }
 
     /**
@@ -81,6 +86,7 @@ class SlotController extends Controller
      */
     public function destroy(Slot $slot)
     {
-        //
+        $slot->delete();
+        return back();
     }
 }

@@ -25,7 +25,7 @@ class SectionController extends Controller
      */
     public function create()
     {
-        //
+        return view('section.create');
     }
 
     /**
@@ -36,7 +36,8 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Section::create($request->all());
+        return redirect('sections');
     }
 
     /**
