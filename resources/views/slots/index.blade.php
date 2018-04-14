@@ -9,7 +9,7 @@
         @foreach($slots as $slot)
             <tr>
                 <td>{{$slot->name}}</td>
-                <td>{{$slot->name}}</td>
+                <td>{{$slot->section->name}}</td>
             </tr>
             @endforeach
     </table>
