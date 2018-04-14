@@ -17,7 +17,7 @@ class CreateSlotsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('section_id');
-            $table->tinyInteger('status');
+            $table->enum('status',['available','busy']);
             $table->foreign('section_id')
                 ->references('id')
                 ->on('sections')

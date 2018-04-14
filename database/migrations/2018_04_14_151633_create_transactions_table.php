@@ -22,6 +22,28 @@ class CreateTransactionsTable extends Migration
             $table->enum('type', ['in', 'out']);
             $table->unsignedInteger('status_id');
             $table->timestamps();
+
+            $table->foreign('section_id')
+                ->references('id')
+                ->on('sections')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('slot_id')
+                ->references('id')
+                ->on('slots')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('status_id')
+                ->references('id')
+                ->on('status')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
         });
     }
 
